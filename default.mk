@@ -19,6 +19,9 @@ EMACS_ARGS ?= --eval "(progn \
   (put 'if-let 'byte-obsolete-info nil) \
   (put 'when-let 'byte-obsolete-info nil))"
 
+PREFIX := $(shell $(EMACS) -Q --batch --eval \
+	  "(princ (expand-file-name \"../../../..\" data-directory))")
+
 LOAD_PATH  ?= $(addprefix -L ../../,$(DEPS))
 LOAD_PATH  += -L .
 
