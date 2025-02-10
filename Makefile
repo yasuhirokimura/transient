@@ -22,6 +22,7 @@ help:
 	$(info make stats-upload -- Publish statistics)
 	$(info make test         -- Run tests)
 	$(info make clean        -- Remove most generated files)
+	$(info make install-lisp -- Install source, byte-code and autoloads)
 	@printf "\n"
 
 lisp:
@@ -61,3 +62,6 @@ clean:
 	@$(MAKE) -C lisp clean
 	@$(MAKE) -C docs clean
 	@$(MAKE) -C test clean
+
+install-lisp:
+	@$(MAKE) -C lisp install-lisp
